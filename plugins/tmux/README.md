@@ -23,6 +23,7 @@ The plugin also supports the following:
 | `tl`   | tmux list-sessions     | Displays a list of running tmux sessions                  |
 | `tksv` | tmux kill-server       | Terminate all running tmux sessions                       |
 | `tkss` | tmux kill-session -t   | Terminate named running tmux session                      |
+| `tnw'  | tmux new-window        | Create a new tmux window                                  |
 | `tmux` | `_zsh_tmux_plugin_run` | Start a new tmux session                                  |
 
 ## Configuration Variables

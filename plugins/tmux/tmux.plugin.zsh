@@ -97,3 +97,19 @@ if [[ -z "$TMUX" && "$ZSH_TMUX_AUTOSTART" == "true" && -z "$INSIDE_EMACS" && -z 
     _zsh_tmux_plugin_run
   fi
 fi
+
+# Create new window and prompt for window name if not given
+function _tmux_new_window() {
+  if [[ $1 == '-n' ]]; then
+    # window name given
+    command tmux new-window "$@"
+    return $?
+  else
+    # prompt for rename
+    command tmux new-window "$@" \; \
+      command-prompt -I "#{window_name}" "rename-window '%%'"
+    return $?
+  fi
+}
+
+alias tnw='_tmux_new_window'
